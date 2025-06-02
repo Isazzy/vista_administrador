@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Panel Administrador</title>
+	<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+	<header>
+		<div class="left">
+			<div class="menu-container">
+				<div class="menu" id="menu">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<div class="brand">
+				<img src="/imagenes/isdm.png" alt="logo-isdm" class="logo">
+				<span class="name">ISDM</span>
+			</div>
+		</div>
+
+		<div class="right icons-header">
+			<a href="#">
+				<img src="/imagenes/chat-text.svg" alt="chat">
+			</a>
+			<a href="#" class="icons-header">
+				<img src="/imagenes/patch-question.svg" alt="question">
+			</a>
+			<a href="#" class="icons-header">
+				<img src="/imagenes/bell.svg" alt="notification">
+			</a>
+			<img src="/imagenes/perfil2.jpg" alt="img-user" class="user">
+		</div>
+	</header>
+	
+	<div class="sidebar " id="sidebar" >
+		<!--header-->
+		<div class="sidebar-header">
+			<img src="/imagenes/perfil2.jpg" alt="user-img">
+			<div class="user-data">
+				<span>Rodrigo Maita</span>
+				<span>Administrador</span>
+			</div>
+
+		</div>
+		<!--Menu-->
+		<nav>
+			<ul>
+				<li>
+					<div class="search" id="search">
+						<img src="/imagenes/search.svg" alt="seach-icon">
+						<input type="text" id="search-input" placeholder="Buscar">
+					</div>
+					<div class="search-background"></div>
+				</li>
+				<li>
+					<a href="#" class="selected">
+						<img src="/imagenes/house.svg "  alt="">
+						<span>Inicio</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="/imagenes/product-hunt-brands.svg" alt="">
+						<span>Productos</span>
+					</a>
+				</li>
+				
+				<li>
+					<a href="#">
+						<img src="/imagenes/layout-wtf.svg">
+						<span>Marketing</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="/imagenes/cash-coin.svg">
+						<span>Ventas</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="/imagenes/wallet2.svg" alt="">
+						<span>Cartera</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="/imagenes/clipboard2-data.svg" alt="">
+						<span>Informes</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="/imagenes/gear.svg" alt="">
+						<span>Configuración</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="/imagenes/box-arrow-left.svg" alt="">
+						<span>Cerrar Sesión</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+	<main class="main-content" id="main">
+		<div class="fondo">
+			<video autoplay="autoplay" loop="loop" id="video_background" preload="auto" volume="none">
+  				<source src="/imagenes/1110733_Animation_Blurred_1920x1080.mp4" type="video/mp4" />
+			</video>
+		</div>
+		<div class="capa"></div>
+		<div class="page-header">
+			<div class="">
+				<h1>Panel de Análisis</h1>
+				<small>Consulta informes y estadísticas</small>
+			</div>
+
+			<div class="header-actions">
+				<a>
+					<span class="las la-file-export"></span>
+					Export
+				</a>
+				<a>
+					<span class="las la-tools"></span>
+					Settings
+				</a>
+			</div>
+		</div>
+
+		<div class="cards">
+			<div class="card-single">
+				<div class="card-flex">
+					<div class="card-info">
+						<div class="card-head">
+							<span>Purchases</span>
+							<small>Number of purchases</small>
+						</div>
+						<h2>17,663</h2>
+						<small>2% less purchase</small>
+					</div>
+					<div class="card-chart">
+						<span class="las la-chart-line"></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="card-single">
+				<div class="card-flex">
+					<div class="card-info">
+						<div class="card-head">
+							<span>Refunds</span>
+							<small>Value of refunded orders</small>
+						</div>
+						<h2>$4,523.11</h2>
+						<small>10% less refund</small>
+					</div>
+					<div class="card-chart">
+						<span class="las la-chart-line"></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="card-single">
+				<div class="card-flex">
+					<div class="card-info">
+						<div class="card-head">
+							<span>Unique Visitors</span>
+							<small>Number of visitors</small>
+						</div>
+						<h2>46,085</h2>
+						<small>2% less visitors</small>
+					</div>
+					<div class="card-chart">
+						<span class="las la-chart-line"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="jobs-grid">
+			<div class="analytics-card">
+				<div class="analytics-head">
+					<h3>Actions needed</h3>
+
+					<span class="las la-ellipsis-h"></span>
+				</div>
+
+				<div class="analytics-chart">
+					<div class="chart-circle">
+						<h1>74%</h1>
+					</div>
+
+					<div class="analytics-note">
+						<small>Note: current sprint requires stakeholders meeting to rearch conclusion</small>
+					</div>
+				</div>
+
+				<div class="analytics-btn">
+					<button>Generate reports</button>
+				</div>
+			</div>
+
+			<div class="jobs">
+				<h2>Jobs<small> See all jobs<span class="las la-arrow-right"></span></small></h2>
+				<table width="100%">
+					<tbody>
+						<tr>
+							<td>
+								<div class="">
+									<span class="indicator"></span>
+								</div>
+							</td>
+							<td>
+								<div class="">
+									Customer experience designer
+								</div>
+							</td>
+							<td>
+								<div class="">
+									Design
+								</div>
+							</td>
+							<td>
+								<div class="">
+									Copenhagen DK.
+								</div>
+							</td>
+							<td>
+								<div class="">
+									Posted 6 days ago
+								</div>
+							</td>
+							<td>
+								<div class="">
+									<button>8 applicants</button>
+								</div>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<div class="">
+									<span class="indicator even"></span>
+								</div>
+							</td>
+							<td>
+								<div class="">
+									Software developer
+								</div>
+							</td>
+							<td>
+								<div class="">
+									developer
+								</div>
+							</td>
+							<td>
+								<div class="">
+									Copenhagen DK.
+								</div>
+							</td>
+							<td>
+								<div class="">
+									Posted 6 days ago
+								</div>
+							</td>
+							<td>
+								<div class="">
+									<button>8 applicants</button>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="">
+									<span class="indicator even"></span>
+								</div>
+							</td>
+							<td>
+								<div class="">
+									Software developer
+								</div>
+							</td>
+							<td>
+								<div class="">
+									developer
+								</div>
+							</td>
+							<td>
+								<div class="">
+									Copenhagen DK.
+								</div>
+							</td>
+							<td>
+								<div class="">
+									Posted 6 days ago
+								</div>
+							</td>
+							<td>
+								<div class="">
+									<button>8 applicants</button>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="">
+									<span class="indicator even"></span>
+								</div>
+							</td>
+							<td>
+								<div class="">
+									Software developer
+								</div>
+							</td>
+							<td>
+								<div class="">
+									developer
+								</div>
+							</td>
+							<td>
+								<div class="">
+									Copenhagen DK.
+								</div>
+							</td>
+							<td>
+								<div class="">
+									Posted 6 days ago
+								</div>
+							</td>
+							<td>
+								<div class="">
+									<button>8 applicants</button>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="">
+									<span class="indicator even"></span>
+								</div>
+							</td>
+							<td>
+								<div class="">
+									Software developer
+								</div>
+							</td>
+							<td>
+								<div class="">
+									developer
+								</div>
+							</td>
+							<td>
+								<div class="">
+									Copenhagen DK.
+								</div>
+							</td>
+							<td>
+								<div class="">
+									Posted 6 days ago
+								</div>
+							</td>
+							<td>
+								<div class="">
+									<button>8 applicants</button>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</main>
+	<script src="/script.js"></script>
+</body>
+</html>
