@@ -36,7 +36,7 @@ header{
     top: 0;
     left: 0;
 }
-/* Left Section*/
+/* Sección izquierda*/
 .left{
     display: flex;
     align-items: center;
@@ -79,13 +79,9 @@ header{
     align-items: center;
     gap: 0.6rem;
 }
+/* Logo del instituto */
 .brand .logo{
-    width: 1.7rem;
-}
-.brand .name{
-    font-size: 1.5rem;
-    font-weight: 900;
-    color: var(--text-title-color);
+    width: 10rem;
 }
 /* Right Section */
 .right{
@@ -135,6 +131,7 @@ header{
 .sidebar::-webkit-scrollbar-thumb{
     background-color: rgb(251, 251, 251);
 }
+/* Encabezado del sidebar */
 .sidebar-header{
     border: 2px solid transparent;
     padding: 0rem 1rem;
@@ -142,7 +139,7 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #cedc96;
+    color: #ed7729;
     transition: padding 0.2s ease;
 }
 .sidebar-header img {
@@ -179,32 +176,35 @@ header{
 .sidebar.menu-toggle{
     width: 18.75rem;
 }
+/* Opciones del Sidebar*/
 .sidebar a{
-    border: .1px solid;
     display: flex;
     align-items: center;
     gap: 1.3rem;
     padding: 0.9rem 0.7rem;
     text-decoration: none;
-    margin: 0 0.5rem;
-    border-radius: 0.5rem;
+    margin: 0 .5rem;
+    border-radius: .5rem;
     white-space: nowrap;
     overflow: hidden;
     color: var(--text-color);
+    margin-bottom: 12px;
 }
 
 /* Search */
 .search{
+    border: 2px solid #cfcfcf;
     display: flex;
-    width: 28vw;
-    padding: 1rem 0.7rem;
-    border-radius: 2rem ;
+    width: 22vw;
+    padding: .1rem 0.7rem;
+    border-radius: 1rem ;
     transition: width 0.3s ease, margin 0.3s ease;
 }
 .sidebar.menu-toggle .search {
     width: calc(100% - 1.4rem); /* se alinea con el resto */
     margin: 0 0.7rem;
     transition: width 0.3s ease;
+    margin-bottom: 22px;
 }
 .search ::-webkit-input-placeholder{
     color: #000;
@@ -225,6 +225,7 @@ header{
 }
 .sidebar a:hover{
     background-color: var(--background-hover);
+    border: .1px solid #333;
 }
 
 .sidebar img{
@@ -288,19 +289,71 @@ main.menu-toggle{
     color: var(--text-color);
 }
 .header-actions a:hover{
-    background-color: #160F29;
+    background-color: #ad9ae2;
     cursor: pointer;
     color: #FDE74C;
 }
-.header-actions span{
-    font-size: .1rem;
-    margin-right: 0%;
-}
+.header-actions .Exportar
 
 main.menu-toggle{
     margin-left: 18.75rem;
 }
-/* Cards */
+/* Contenido principal */
+.resumen {
+    padding: 40px 20px;
+    background-color: rgba(0, 0, 0, 0.65);
+    margin: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 193, 7, 0.2);
+}
+  
+.resumen h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #ffc107;
+    text-align: center;
+}
+  
+/* Cuadros de resumen */
+.cuadro-resumen {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+  
+.cuadro {
+    background-color: #1a1a1a;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 0 12px rgba(255,193,7,0.2);
+    transition: transform 0.3s;
+}
+  
+.cuadro:hover {
+    transform: translateY(-5px);
+}
+  
+.cuadro h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #ffc107;
+}
+  
+.cuadro p {
+    margin: 0;
+    font-size: 16px;
+    color: #ddd;
+}
+  
+.cuadro i {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #ffc107;
+}
+/* Cards 
 .cards{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -332,7 +385,7 @@ main.menu-toggle{
 .card-info h2{
     font-size: 2.2rem;
     color: #333;
-}
+}*/
 /* job grid */
 .jobs-grid{
     margin-top: 3rem;
@@ -407,7 +460,7 @@ span.indicator.even{
     border-radius: 50%;
 }
 .jobs table td div{
-    background: #fff;
+    background: #333;
     margin-bottom: .8rem;
     height: 30px;
     display: flex;
@@ -418,7 +471,7 @@ span.indicator.even{
     font-weight: 500;
 }
 .jobs table td button {
-    background-color: #f3f4f6;
+    background-color: #1354d8;
     color: #0a0b0d;
     border: 1px solid #d1d5db;
     padding: 0.3rem 0.75rem;

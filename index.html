@@ -18,8 +18,7 @@
 				</div>
 			</div>
 			<div class="brand">
-				<img src="/vista_administrador/imagenes/isdm.png" alt="logo-isdm" class="logo">
-				<span class="name">ISDM</span>
+
 			</div>
 		</div>
 
@@ -33,7 +32,7 @@
 			<a href="#" class="icons-header">
 				<img src="/vista_administrador/imagenes/bell.svg" alt="notification">
 			</a>
-			<img src="/vista_administrador/imagenes/perfil2.jpg" alt="img-user" class="user">
+
 		</div>
 	</header>
 	
@@ -94,18 +93,6 @@
 						<span>Informes</span>
 					</a>
 				</li>
-				<li>
-					<a href="#">
-						<img src="/imagenes/gear.svg" alt="">
-						<span>Configuración</span>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<img src="/imagenes/box-arrow-left.svg" alt="">
-						<span>Cerrar Sesión</span>
-					</a>
-				</li>
 			</ul>
 		</nav>
 	</div>
@@ -123,27 +110,48 @@
 			</div>
 
 			<div class="header-actions">
-				<a>
-					<span class="las la-file-export"></span>
-					Export
+				<!--CONFIGURACIÓN-->
+				<a href="#">
+					<img src="/imagenes/gear.svg" alt="">
 				</a>
-				<a>
-					<span class="las la-tools"></span>
-					Settings
-				</a>
+			</div> 
+		</div>
+		<div class="resumen">
+			<h2>Resumen de Rendimiento</h2>
+			<div class="cuadro-resumen">
+			  <div class="cuadro">
+				<i class="fas fa-dollar-sign"></i>
+				<h3>$1.250.000</h3>
+				<p>Ingresos totales</p>
+			  </div>
+			  <div class="cuadro">
+				<i class="fas fa-shopping-cart"></i>
+				<h3>356</h3>
+				<p>Ventas realizadas</p>
+			  </div>
+			  <div class="cuadro">
+				<i class="fas fa-eye"></i>
+				<h3>12.340</h3>
+				<p>Visitas este mes</p>
+			  </div>
+			  <div class="cuadro">
+				<i class="fas fa-truck"></i>
+				<h3>82</h3>
+				<p>Envíos en curso</p>
+			  </div>
 			</div>
 		</div>
-
+<!----
 		<div class="cards">
 			<div class="card-single">
 				<div class="card-flex">
 					<div class="card-info">
 						<div class="card-head">
-							<span>Purchases</span>
-							<small>Number of purchases</small>
+							<span>Ventas</span>
+							<small>Número de Ventas</small>
 						</div>
 						<h2>17,663</h2>
-						<small>2% less purchase</small>
+						<small>2% de Ventas-cambiar a grafico</small>
 					</div>
 					<div class="card-chart">
 						<span class="las la-chart-line"></span>
@@ -155,11 +163,11 @@
 				<div class="card-flex">
 					<div class="card-info">
 						<div class="card-head">
-							<span>Refunds</span>
-							<small>Value of refunded orders</small>
+							<span>Reembolsos</span>
+							<small>Valor de las ordenes reembolsadas</small>
 						</div>
-						<h2>$4,523.11</h2>
-						<small>10% less refund</small>
+						<h2>$14,523.11</h2>
+						<small>10% menos reembolsos -grafico</small>
 					</div>
 					<div class="card-chart">
 						<span class="las la-chart-line"></span>
@@ -171,11 +179,11 @@
 				<div class="card-flex">
 					<div class="card-info">
 						<div class="card-head">
-							<span>Unique Visitors</span>
-							<small>Number of visitors</small>
+							<span>Vistas</span>
+							<small>Número de vistas</small>
 						</div>
 						<h2>46,085</h2>
-						<small>2% less visitors</small>
+						<small>2% menos visitantes</small>
 					</div>
 					<div class="card-chart">
 						<span class="las la-chart-line"></span>
@@ -183,13 +191,10 @@
 				</div>
 			</div>
 		</div>
-<canvas id="myChart" width="400" height="200"></canvas>
-
-
 		<div class="jobs-grid">
 			<div class="analytics-card">
 				<div class="analytics-head">
-					<h3>Actions needed</h3>
+					<h3>Ganancias por ciclo</h3>
 
 					<span class="las la-ellipsis-h"></span>
 				</div>
@@ -200,18 +205,24 @@
 					</div>
 
 					<div class="analytics-note">
-						<small>Note: current sprint requires stakeholders meeting to rearch conclusion</small>
+						<small>Nota: Los reportes de ganancias generados se guardan en un historial de consulta</small>
 					</div>
 				</div>
 
 				<div class="analytics-btn">
-					<button>Generate reports</button>
+					<button>Consultar Historial de ganancias</button>
 				</div>
 			</div>
 
 			<div class="jobs">
-				<h2>Jobs<small> See all jobs<span class="las la-arrow-right"></span></small></h2>
+				<h2>Productos mas vendidos<small> Detalles<span class="las la-arrow-right"></span></small></h2>
 				<table width="100%">
+					<div class="header-actions">
+						<!--EXPORTAR-->
+						<a href="#">
+							<span class="exportar">Exportar</span>
+						</a>
+					</div> 
 					<tbody>
 						<tr>
 							<td>
@@ -221,27 +232,27 @@
 							</td>
 							<td>
 								<div class="">
-									Customer experience designer
+									ID:14689
 								</div>
 							</td>
 							<td>
 								<div class="">
-									Design
+									Silla Gamer
 								</div>
 							</td>
 							<td>
 								<div class="">
-									Copenhagen DK.
+									VG-SL3800SE_CB
 								</div>
 							</td>
 							<td>
 								<div class="">
-									Posted 6 days ago
+									$14.337.848
 								</div>
 							</td>
 							<td>
 								<div class="">
-									<button>8 applicants</button>
+									<button>80 ventas</button>
 								</div>
 							</td>
 						</tr>
@@ -254,59 +265,27 @@
 							</td>
 							<td>
 								<div class="">
-									Software developer
+									ID:16085
 								</div>
 							</td>
 							<td>
 								<div class="">
-									developer
+									Monitores y pantallas
 								</div>
 							</td>
 							<td>
 								<div class="">
-									Copenhagen DK.
+									32GR93U-B
 								</div>
 							</td>
 							<td>
 								<div class="">
-									Posted 6 days ago
+									$47.887.200
 								</div>
 							</td>
 							<td>
 								<div class="">
-									<button>8 applicants</button>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="">
-									<span class="indicator even"></span>
-								</div>
-							</td>
-							<td>
-								<div class="">
-									Software developer
-								</div>
-							</td>
-							<td>
-								<div class="">
-									developer
-								</div>
-							</td>
-							<td>
-								<div class="">
-									Copenhagen DK.
-								</div>
-							</td>
-							<td>
-								<div class="">
-									Posted 6 days ago
-								</div>
-							</td>
-							<td>
-								<div class="">
-									<button>8 applicants</button>
+									<button>60 ventas</button>
 								</div>
 							</td>
 						</tr>
@@ -318,27 +297,27 @@
 							</td>
 							<td>
 								<div class="">
-									Software developer
+									ID: 15989
 								</div>
 							</td>
 							<td>
 								<div class="">
-									developer
+									Placas de Video
 								</div>
 							</td>
 							<td>
 								<div class="">
-									Copenhagen DK.
+									RX-78TQICKF9
 								</div>
 							</td>
 							<td>
 								<div class="">
-									Posted 6 days ago
+									$14.624.980,5
 								</div>
 							</td>
 							<td>
 								<div class="">
-									<button>8 applicants</button>
+									<button>65 ventas</button>
 								</div>
 							</td>
 						</tr>
@@ -350,27 +329,59 @@
 							</td>
 							<td>
 								<div class="">
-									Software developer
+									ID: 16414
 								</div>
 							</td>
 							<td>
 								<div class="">
-									developer
+									Periféricos
 								</div>
 							</td>
 							<td>
 								<div class="">
-									Copenhagen DK.
+									RZ03-04681900-R3U1
 								</div>
 							</td>
 							<td>
 								<div class="">
-									Posted 6 days ago
+									$5.921.000
 								</div>
 							</td>
 							<td>
 								<div class="">
-									<button>8 applicants</button>
+									<button>100 ventas</button>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="">
+									<span class="indicator even"></span>
+								</div>
+							</td>
+							<td>
+								<div class="">
+									ID: 7738
+								</div>
+							</td>
+							<td>
+								<div class="">
+									Periféricos
+								</div>
+							</td>
+							<td>
+								<div class="">
+									SKU:910-005281
+								</div>
+							</td>
+							<td>
+								<div class="">
+									$149.850
+								</div>
+							</td>
+							<td>
+								<div class="">
+									<button>148 ventas</button>
 								</div>
 							</td>
 						</tr>
