@@ -29,7 +29,7 @@ small {font-size: 0.750rem; /* 12px */}
     --primary: #ded11b;
     --secondary: #635b07;
     --accent: #ffe500;
-    --background-active: #7e8080;
+    --background-active: #ffffff;
     --cards:#1e1e1e;
 }
 /* Estilo Global */
@@ -193,7 +193,7 @@ header{
     width: 14.75rem;
 }
 /* Opciones del Sidebar*/
-.sidebar a{
+.sidebar a {
     display: flex;
     align-items: center;
     gap: 1.3rem;
@@ -251,6 +251,11 @@ header{
 .sidebar img{
     width: 1.6rem;
 }
+/* Iconos amarillos */
+.selected svg{
+    width: 20px;
+    height: 20px;
+}
 /* Main */
 .fondo{
     background-color: var(--background);
@@ -296,6 +301,7 @@ main.menu-toggle{
 .page-header{
     display: flex;
     justify-content: space-between;
+    color: var(--text);
 }
 /* Contenido exportar */
 .header-actions a{
@@ -369,7 +375,9 @@ main.menu-toggle{
     grid-template-columns: 1fr;
     gap: 3rem;
 }
-
+.jobs h2{
+    color: var(--text);
+}
 .jobs h2 small{
     display: inline-flex;
     font-size: 0.7rem;
