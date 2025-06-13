@@ -43,7 +43,7 @@
 		<div class="sidebar-header">
 			<img src="/imagenes/perfil2.jpg" alt="user-img">
 			<div class="user-data">
-				<span>Rodrigo Maita</span>
+				<span>Rodrigo Maita|</span>
 				<span>Administrador</span>
 			</div>
 
@@ -100,9 +100,10 @@
 	</div>
 	<main class="main-content" id="main">
 		<div class="fondo">
-			<video autoplay="autoplay" loop="loop" id="video_background" preload="auto" volume="none">
+			<img src="https://i.pinimg.com/736x/20/3c/1f/203c1f064f06c6679d81b3c0c9f6e8d2.jpg">
+			<!--<video autoplay="autoplay" loop="loop" id="video_background" preload="auto" volume="none">
   				<source src="/imagenes/1110733_Animation_Blurred_1920x1080.mp4" type="video/mp4" />
-			</video>
+			</video>-->
 		</div>
 		<div class="capa"></div>
 		<div class="page-header">
@@ -123,22 +124,22 @@
 			<div class="cuadro-resumen">
 			  <div class="cuadro">
 				<i class="fas fa-dollar-sign"></i>
-				<h3>$1.250.000</h3>
+				<div class="counter" data-target="1250000" data-format="money"></div>
 				<p>Ingresos totales</p>
 			  </div>
 			  <div class="cuadro">
 				<i class="fas fa-shopping-cart"></i>
-				<h3>356</h3>
+				<div class="counter" data-target="356" data-format="none"></div>
 				<p>Ventas realizadas</p>
 			  </div>
 			  <div class="cuadro">
 				<i class="fas fa-eye"></i>
-				<h3>12.340</h3>
+				<div class="counter" data-target="12340" data-format="none"></div>
 				<p>Visitas este mes</p>
 			  </div>
 			  <div class="cuadro">
 				<i class="fas fa-truck"></i>
-				<h3>82</h3>
+				<div class="counter" data-target="147" data-format="none"></div>
 				<p>Envíos en curso</p>
 			  </div>
 			</div>
@@ -218,14 +219,18 @@
 			</div>
 
 			<div class="jobs">
-				<h2>Productos mas vendidos<small> Detalles<span class="las la-arrow-right"></span></small></h2>
+				<h2>Productos mas vendidos
+					<small> 
+						<div class="header-actions">
+							<!--EXPORTAR-->
+							<a href="#">
+								<span class="exportar">Exportar</span>
+							</a>
+						</div>
+						<!--Detalles<span class="las la-arrow-right"></span>-->
+					</small>
+				</h2>
 				<table width="100%">
-					<div class="header-actions">
-						<!--EXPORTAR-->
-						<a href="#">
-							<span class="exportar">Exportar</span>
-						</a>
-					</div> 
 					<tbody>
 						<tr>
 							<td>

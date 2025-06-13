@@ -64,14 +64,7 @@ header{
     background-color: var(--menu-color);
     transition: all 0.2 ease;
 }
-.menu.menu-toggle div:first-child{
-    width: 40%;
-    transform: rotate(-35deg) translate(-30%,175%);
-}
-.menu.menu-toggle div:last-child{
-    width: 40%;
-    transform: rotate(35deg) translate(-30%, -165%);
-}
+
 /* Brand */
 .brand{
     display: flex;
@@ -111,7 +104,6 @@ header{
 }
 /* Sidebar */
 .sidebar{
-    margin-top: 4rem;
     width: 0rem;
     height: 100%;
     position: fixed;
@@ -126,43 +118,47 @@ header{
 }
 /* Scroll */
 .sidebar::-webkit-scrollbar{
-    width: 0.3rem;
+    width: 0.5rem;
 }
 .sidebar::-webkit-scrollbar-thumb{
     background-color: rgb(251, 251, 251);
 }
 /* Encabezado del sidebar */
 .sidebar-header{
-    border: 2px solid transparent;
-    padding: 0rem 1rem;
+    padding: .8rem 1rem;
+    width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    color: #ed7729;
+    justify-content: center;
+    color: #000000;
     transition: padding 0.2s ease;
+    margin-bottom: 2px;
+    margin-top: 0;
 }
 .sidebar-header img {
-    object-fit: cover;
-    border-radius: 50%;
-    transition: width 0.3s ease, height 0.3s ease;
+    width: 2.1rem;
+    height: 50px;
+    margin-top: 2.5rem;
+    margin-bottom: 0;
 }
 .sidebar-header .user-data{
     display: flex;
-    flex-direction: column;
     align-items: center;
-    margin-top: 1.1rem;
+    margin-top: 0rem;
     gap: 0.3rem;
     overflow: hidden;
     opacity: 1;
     transition: all 0.3s ease;
 }
+/* Span de Usuario */
 .sidebar-header .user-data span:first-child{
-    font-weight: 600;
-    font-size: 0.9rem;
-}
+    font-weight: 600; 
+    font-size: 0.8rem;
+}/* Span de Admin*/
 .sidebar-header .user-data span:last-child{
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     opacity: 0.6;
 }
 .sidebar:not(.menu-toggle) .user-data {
@@ -174,7 +170,7 @@ header{
   }
   
 .sidebar.menu-toggle{
-    width: 18.75rem;
+    width: 12.75rem;
 }
 /* Opciones del Sidebar*/
 .sidebar a{
@@ -207,7 +203,7 @@ header{
     margin-bottom: 22px;
 }
 .search ::-webkit-input-placeholder{
-    color: #000;
+    color: #000000;
 }
 .search input{
     background-color: transparent;
@@ -259,46 +255,38 @@ header{
 main{
     margin-top: 4rem;
     margin-left: 0rem;
-    width: 100%;
+    width: 100vw;
     padding: 2rem;
-    transition: margin-left 0.5 ease;
+    transition: margin-left 0.5 ease, width 0.5 ease;
     background: transparent;
     min-height: calc(100vh - 70px);
     overflow-x: hidden;
+    position: relative;
 
 }
 main.menu-toggle{
-    margin-left: 250px;
-    width: calc(100%-250px);
+    left: 12.75rem;
+    width: calc(100vw - 12.75rem); /* Resta el ancho del sidebar */
+    overflow-x: hidden; /* Previene desbordamiento horizontal */
 }
 .page-header{
     display: flex;
     justify-content: space-between;
 }
 .header-actions a{
-    border: .1px solid #000;
     display: flex;
     align-items: center;
     gap: 1.3rem;
-    padding: 0.9rem 0.7rem;
     text-decoration: none;
-    margin: 0 0.5rem;
-    border-radius: 0.5rem;
-    white-space: nowrap;
-    overflow: hidden;
+    border-radius: 100%;
     color: var(--text-color);
 }
-.header-actions a:hover{
+.header-actions a:hover:not(span .exportar) {
     background-color: #ad9ae2;
     cursor: pointer;
     color: #FDE74C;
 }
-.header-actions .Exportar
-
-main.menu-toggle{
-    margin-left: 18.75rem;
-}
-/* Contenido principal */
+/* Contenido principal *//* RESUMEN DE RENDIMIENTO */
 .resumen {
     padding: 40px 20px;
     background-color: rgba(0, 0, 0, 0.65);
@@ -316,8 +304,9 @@ main.menu-toggle{
   
 /* Cuadros de resumen */
 .cuadro-resumen {
-    display: flex;
+    display: grid;
     gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -336,7 +325,7 @@ main.menu-toggle{
     transform: translateY(-5px);
 }
   
-.cuadro h3 {
+.cuadro .counter {
     font-size: 24px;
     margin-bottom: 10px;
     color: #ffc107;
@@ -346,6 +335,7 @@ main.menu-toggle{
     margin: 0;
     font-size: 16px;
     color: #ddd;
+    font-family: 'Roboto Mono', sans-serif;
 }
   
 .cuadro i {
@@ -437,16 +427,16 @@ main.menu-toggle{
     border-radius: 3px;
 }
 .jobs h2 small{
-    color: #5850ec;
-    font-weight: 600;
-    display: inline-block;
-    margin-left: 1rem;
-    font-size: .9rem;
+   /* color: #5850ec;*/
+    /*font-weight: 600;*/
+    display: inline-flex;
+    font-size: 0.7rem;
 }
 .jobs table{
     border-collapse: collapse;
     margin-top: 1rem;
 }
+/*Contenido de la tabla (redondos)*/
 span.indicator{
     background: #E0B0D5;
     height: 15px;
@@ -482,10 +472,14 @@ span.indicator.even{
     transition: background-color 0.2s ease;
   }
   
-  .jobs table td button:hover {
+.jobs table td button:hover {
     background-color: #e5e7eb;
-  }
-  
+}
+/*Asegurar que el contenido no se desborde*/
+.resumen, .jobs-grid{
+    max-width: 100%;
+    overflow: hidden;
+}  
 /* Responsive */
 @media (max-width:500px){
     .right .icons-header{
