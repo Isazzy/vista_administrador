@@ -1,22 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Solway:700|Solway:400');
+
+body {
+  font-family: 'Solway';
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Solway';
+  font-weight: 700;
+}
+
+html {font-size: 100%;} /* 16px */
+
+h1 {font-size: 4.210rem; /* 67.36px */}
+
+h2 {font-size: 3.158rem; /* 50.56px */}
+
+h3 {font-size: 2.369rem; /* 37.92px */}
+
+h4 {font-size: 1.777rem; /* 28.48px */}
+
+h5 {font-size: 1.333rem; /* 21.28px */}
+
+small {font-size: 0.750rem; /* 12px */}
 :root{
-    --background-color: rgb(255, 254, 254);
-    --text-title-color: #000000;
-    --text-color: #000000;
-    --menu-color: #4A102A;
-
-    --text-selected-color: #efefef;
-    --background-selected: #85193C;
-    --background-hover: #d095e5;
-
-    --border-color: #f4ac5b;
+    --text: #cecfcf;
+    --background: #050606;
+    --primary: #ded11b;
+    --secondary: #635b07;
+    --accent: #ffe500;
+    --background-active: #7e8080;
+    --cards:#1e1e1e;
 }
 /* Estilo Global */
 *{
     margin:0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Nunito Sans", sans-serif;
 }
 /* Body */
 .body{
@@ -30,12 +50,17 @@ header{
     display: flex;
     justify-content: space-between;
     padding: 0.45rem 2rem 0.45rem 1.27rem;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--background);
     position: fixed;
-    background-color: var(--background-color);
+    background-color:var(--background-active);  
     top: 0;
     left: 0;
+    transition: all 0.3s ease-in-out;
 }
+.nav.active {
+    background-color: var(--primary);
+  }
+
 /* Sección izquierda*/
 .left{
     display: flex;
@@ -61,7 +86,7 @@ header{
 .menu div{
     width: 100%;
     height: 0.15rem;
-    background-color: var(--menu-color);
+    background-color: var(--background);
     transition: all 0.2 ease;
 }
 
@@ -78,7 +103,6 @@ header{
 }
 /* Right Section */
 .right{
-    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -92,7 +116,7 @@ header{
 }
 
 .right a:hover{
-    background-color: var(--background-hover);
+    background-color: var(--primary);
 }
 .right img{
     width: 1.5rem;
@@ -104,6 +128,7 @@ header{
 }
 /* Sidebar */
 .sidebar{
+    margin-top: 62px;
     width: 0rem;
     height: 100%;
     position: fixed;
@@ -111,18 +136,12 @@ header{
     left: 0;
     z-index: 100;
     padding: 1.1rem 0;
-    border-right: 1px solid var(--border-color);
+    border-right: 1px solid var(--background-active);
     overflow-y: auto;
-    background-color: var(--background-color);
+    background-color: var(--background);
     transition: width 0.5s ease;
 }
-/* Scroll */
-.sidebar::-webkit-scrollbar{
-    width: 0.5rem;
-}
-.sidebar::-webkit-scrollbar-thumb{
-    background-color: rgb(251, 251, 251);
-}
+
 /* Encabezado del sidebar */
 .sidebar-header{
     padding: .8rem 1rem;
@@ -132,7 +151,7 @@ header{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #000000;
+    color: var(--text);
     transition: padding 0.2s ease;
     margin-bottom: 2px;
     margin-top: 0;
@@ -140,7 +159,7 @@ header{
 .sidebar-header img {
     width: 2.1rem;
     height: 50px;
-    margin-top: 2.5rem;
+    margin-top: 0rem;
     margin-bottom: 0;
 }
 .sidebar-header .user-data{
@@ -154,6 +173,7 @@ header{
 }
 /* Span de Usuario */
 .sidebar-header .user-data span:first-child{
+   /* color: var(--text);*/
     font-weight: 600; 
     font-size: 0.8rem;
 }/* Span de Admin*/
@@ -170,7 +190,7 @@ header{
   }
   
 .sidebar.menu-toggle{
-    width: 12.75rem;
+    width: 14.75rem;
 }
 /* Opciones del Sidebar*/
 .sidebar a{
@@ -183,13 +203,17 @@ header{
     border-radius: .5rem;
     white-space: nowrap;
     overflow: hidden;
-    color: var(--text-color);
+    color: var(--text);
     margin-bottom: 12px;
 }
-
+/* Problemas con bootstrap */
+.sidebar ul {
+    list-style-type: none; /* Quita los puntos */
+    padding-left: 0;      /* Elimina el padding izquierdo por defecto */
+}
 /* Search */
 .search{
-    border: 2px solid #cfcfcf;
+    border: 2px solid var(--accent);
     display: flex;
     width: 22vw;
     padding: .1rem 0.7rem;
@@ -203,7 +227,7 @@ header{
     margin-bottom: 22px;
 }
 .search ::-webkit-input-placeholder{
-    color: #000000;
+    color: var(--text);
 }
 .search input{
     background-color: transparent;
@@ -212,16 +236,16 @@ header{
     font-size: 0.95rem;
     width: 100%;
     margin: 0 2.5rem;
-    color: var(--text-color);
+    color: var(--secondary);
     min-width: 0;
     transition: width 0.3s ease;
 }
 .search:hover{
-    outline: 1px solid #160F29;
+    outline: 1px solid var(--secondary);
 }
 .sidebar a:hover{
-    background-color: var(--background-hover);
-    border: .1px solid #333;
+    background-color: var(--secondary);
+    border: .1px solid var(--background-active);
 }
 
 .sidebar img{
@@ -229,19 +253,20 @@ header{
 }
 /* Main */
 .fondo{
+    background-color: var(--background);
     z-index: -3;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: .1rem;
+    padding: .5rem;
     position: fixed;
     top: 0;
     left: 0;
-    min-height: calc(100vh - 70px);
+    min-height: 100vh;
     margin-left: 0px;
     transition: margin-left 0.5 ease;
 }
-.capa{
+/*.capa{
     position: fixed;
     top: 0;
     left: 0;
@@ -250,7 +275,7 @@ header{
     background: #1c1c1d;
     opacity: 0.2;
     z-index: -1;
-}
+}*/
 
 main{
     margin-top: 4rem;
@@ -258,7 +283,6 @@ main{
     width: 100vw;
     padding: 2rem;
     transition: margin-left 0.5 ease, width 0.5 ease;
-    background: transparent;
     min-height: calc(100vh - 70px);
     overflow-x: hidden;
     position: relative;
@@ -273,32 +297,32 @@ main.menu-toggle{
     display: flex;
     justify-content: space-between;
 }
+/* Contenido exportar */
 .header-actions a{
     display: flex;
     align-items: center;
     gap: 1.3rem;
     text-decoration: none;
     border-radius: 100%;
-    color: var(--text-color);
+    color: var(--text);
 }
 .header-actions a:hover:not(span .exportar) {
-    background-color: #ad9ae2;
     cursor: pointer;
     color: #FDE74C;
 }
 /* Contenido principal *//* RESUMEN DE RENDIMIENTO */
 .resumen {
     padding: 40px 20px;
-    background-color: rgba(0, 0, 0, 0.65);
+    background-color: var(--cards);
     margin: 30px;
     border-radius: 15px;
-    box-shadow: 0 0 20px rgba(255, 193, 7, 0.2);
+    box-shadow: 0 0 20px var(--primary);
 }
   
 .resumen h2 {
     font-size: 28px;
     margin-bottom: 30px;
-    color: #ffc107;
+    color: var(--primary);
     text-align: center;
 }
   
@@ -312,12 +336,12 @@ main.menu-toggle{
 }
   
 .cuadro {
-    background-color: #1a1a1a;
+    background-color: var(--secondary);
     padding: 25px;
     border-radius: 10px;
     text-align: center;
     width: 250px;
-    box-shadow: 0 0 12px rgba(255,193,7,0.2);
+    box-shadow: 0 0 12px var(--primary);
     transition: transform 0.3s;
 }
   
@@ -328,54 +352,16 @@ main.menu-toggle{
 .cuadro .counter {
     font-size: 24px;
     margin-bottom: 10px;
-    color: #ffc107;
+    color: var(--accent);
 }
   
 .cuadro p {
     margin: 0;
     font-size: 16px;
-    color: #ddd;
+    color: var(--text);
     font-family: 'Roboto Mono', sans-serif;
 }
   
-.cuadro i {
-    font-size: 32px;
-    margin-bottom: 10px;
-    color: #ffc107;
-}
-/* Cards 
-.cards{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    padding: 1rem;
-    margin-top: 2.5rem;
-}
-.card-single{
-    background: #fff;
-    padding: 1rem;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-}
-.card-flex{
-    display: grid;
-    grid-template-columns: 70% auto;
-    align-items: center;
-}
-.card-head span{
-    display: block;
-    text-transform: uppercase;
-    color: #718b1a;
-    font-size: .9rem;
-}
-.card-head small{
-    font-weight: 600;
-    color: #c73131;
-}
-.card-info h2{
-    font-size: 2.2rem;
-    color: #333;
-}*/
 /* job grid */
 .jobs-grid{
     margin-top: 3rem;
@@ -383,98 +369,13 @@ main.menu-toggle{
     grid-template-columns: 1fr;
     gap: 3rem;
 }
-.analytics-card{
-    border-radius: 5px;
-    background: #ededed;
-    padding: 1.5rem;
-}
-.analytics-head{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 3rem;
-}
-.analytics-head span{
-    font-size: 1.5rem;
-}
-.analytics-chart small{
-    font-weight: 600;
-    color: #160F29;
-    display: block;
-    margin-bottom: 1rem;
-}
-.chart-circle{
-    height: 150px;
-    width: 150px;
-    border-left: 10px solid transparent;
-    border-right: 10px solid #AEE5D8;
-    border-bottom: 10px solid #AEE5D8;
-    border-top: 10px solid #AEE5D8;
-    display: grid;
-    place-items: center;
-    margin: auto;
-    border-radius: 50%;
-    margin-bottom: 3rem;
-}
-.analytics-card button{
-    display: block;
-    padding: .6rem 1rem;
-    width: 100%;
-    height: 45px;
-    background: #5850ec;
-    color: #fff;
-    border: 1px solid #5850ec;
-    border-radius: 3px;
-}
+
 .jobs h2 small{
-   /* color: #5850ec;*/
-    /*font-weight: 600;*/
     display: inline-flex;
     font-size: 0.7rem;
 }
-.jobs table{
-    border-collapse: collapse;
-    margin-top: 1rem;
-}
-/*Contenido de la tabla (redondos)*/
-span.indicator{
-    background: #E0B0D5;
-    height: 15px;
-    width: 15px;
-    border-radius: 50%;
-}
-span.indicator.even{
-    background: #0c110d;
-    height: 15px;
-    width: 15px;
-    border-radius: 50%;
-}
-.jobs table td div{
-    background: #333;
-    margin-bottom: .8rem;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    padding: 2rem;
-    font-size: .85rem;
-    color: #707780;
-    font-weight: 500;
-}
-.jobs table td button {
-    background-color: #1354d8;
-    color: #0a0b0d;
-    border: 1px solid #d1d5db;
-    padding: 0.3rem 0.75rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-  
-.jobs table td button:hover {
-    background-color: #e5e7eb;
-}
+
+
 /*Asegurar que el contenido no se desborde*/
 .resumen, .jobs-grid{
     max-width: 100%;

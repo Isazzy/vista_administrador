@@ -1,3 +1,15 @@
+//Scroll encabezado
+const nav = document.querySelector('.nav')
+window.addEventListener('scroll', fixNav)
+
+function fixNav() {
+    if(window.scrollY > nav.offsetHeight + 150) {
+        nav.classList.add('active')
+    } else {
+        nav.classList.remove('active')
+    }
+}
+
 const menu = document.getElementById("menu");
 const sidebar = document.getElementById("sidebar");
 const main = document.getElementById("main");
@@ -8,40 +20,76 @@ menu.addEventListener("click",()=>{
     main.classList.toggle("menu-toggle");
 });
 
+// Obtener el contexto del elemento canvas donde se renderizará el gráfico
 var ctx = document.getElementById('myChart').getContext('2d');
+
+// Crear una nueva instancia del gráfico
 var myChart = new Chart(ctx, {
-    type: 'bar', // Puedes cambiar a bar, pie, etc.
+    type: 'line', // Tipo de gráfico: línea (también puede ser 'bar', 'pie', etc.)
     data: {
-        labels: ['Enero', 'Febrero', 'Marzo', 'Abril',"Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"],
+        // Etiquetas para el eje X (meses del año)
+        labels: ['Enero', 'Febrero', 'Marzo', 'Abril', "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+        // Conjuntos de datos (en este caso, solo uno)
         datasets: [{
-            label: 'Ventas',
-            data: [15000, 11000, 12000, 16000,10000,19000,8800,15000,3000,5600,9700,14500],
-            backgroundColor: ["red","orange","yellow"],
-            borderColor: 'black',
-            borderWidth: 2
+            label: 'Ganancias de Ventas por mes', // Leyenda del dataset
+            data: [15000, 11000, 12000, 16000, 10000, 19000, 8800, 15000, 3000, 5600, 9700, 14500], // Valores para cada mes
+            backgroundColor: ["red", "orange", "yellow"], // Colores de fondo (para gráficos de barras/puntos)
+            borderColor: 'black', // Color de la línea del gráfico
+            borderWidth: 2 // Grosor de la línea
         }]
     },
     options: {
+        // Configuración de los ejes
         scales: {
             y: {
-                beginAtZero: true,
+                beginAtZero: true, // El eje Y comienza desde 0
                 ticks: {
-                    fontColor: 'black', // Cambia el color de las etiquetas del eje Y
-                        }
+                    color: 'white' // Color de los números del eje Y
                 },
+                grid: {
+                    color: 'rgba(255, 255, 255, 0.1)' // Color de las líneas de la cuadrícula (eje Y)
+                }
+            },
             x: {
                 ticks: {
-                    fontColor: 'black', // Cambia el color de las etiquetas del eje X
-                        }
+                    color: 'white' // Color de las etiquetas del eje X (meses)
+                },
+                grid: {
+                    color: 'rgba(255, 255, 255, 0.1)' // Color de las líneas de la cuadrícula (eje X)
                 }
+            }
         },
-        legend: {
-            labels: {
-                fontColor: 'black' // Cambia el color de las etiquetas de la leyenda
+        // Configuración de plugins adicionales
+        plugins: {
+            legend: {
+                display: true, // Mostrar la leyenda
+                labels: {
+                    color: '#ffc107', // Color del texto de la leyenda (amarillo)
+                    font: {
+                        size: 14 // Tamaño de la fuente
+                    }
+                }
+            },
+            tooltip: {
+                enabled: true, // Habilitar tooltips al pasar el mouse
+                backgroundColor: 'rgba(0, 0, 0, 0.8)', // Fondo del tooltip
+                titleColor: '#ffc107', // Color del título del tooltip
+                bodyColor: 'white' // Color del contenido del tooltip
             }
         }
     }
 });
+
+
+
+
+
+
+
+
+
+
+
 // Seleccionamos las clases "counter"
 const counters = document.querySelectorAll('.counter');
 // Recorremos cada contador 
